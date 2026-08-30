@@ -46,7 +46,7 @@ BOARD_W = COLS * CELL
 BOARD_H = ROWS * CELL
 
 WIN_W = BOARD_W + 100
-WIN_H = BOARD_H + 260
+WIN_H = BOARD_H + 300
 
 BOARD_X = (WIN_W - BOARD_W) // 2
 BOARD_Y = 160
@@ -554,7 +554,7 @@ class Game:
 
     def draw_title(self):
         title = self.font_big.render("CONNECT FOUR", True, WHITE)
-        self.screen.blit(title, title.get_rect(center=(WIN_W // 2, 140)))
+        self.screen.blit(title, title.get_rect(center=(WIN_W // 2, 90)))
 
         draw_board_frame(self.screen)
         demo_board = create_board()
@@ -574,7 +574,7 @@ class Game:
         for line in lines:
             surf = self.font_med.render(line, True, WHITE)
             self.screen.blit(surf, surf.get_rect(center=(WIN_W // 2, y)))
-            y += 42
+            y += 38
 
     def draw_play(self):
         draw_board_frame(self.screen)
