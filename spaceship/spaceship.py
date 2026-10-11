@@ -114,7 +114,7 @@ class Particle:
         if t <= 0:
             return
         r, g, b = self.color
-        color = (int(r * t + 10), int(g * t + 10), int(b * t + 10))
+        color = (min(255, int(r * t + 10)), min(255, int(g * t + 10)), min(255, int(b * t + 10)))
         pygame.draw.circle(surface, color, (int(self.x), int(self.y)), max(1, int(self.size * t * 2)))
 
 
